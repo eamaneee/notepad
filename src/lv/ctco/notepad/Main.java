@@ -7,6 +7,7 @@ import java.util.List;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static List<Person> records = new ArrayList<>();
+
     public static void main(String[] args) {
         for(;;) {
             System.out.println("cmd: ");
@@ -25,7 +26,7 @@ public class Main {
                     exit();
                     break;
                 default:
-                    System.out.println();
+                    System.out.println("wrong");
 
             }}
     }
@@ -34,11 +35,26 @@ public class Main {
     }
 
     private static void showList() {
+        records.forEach(r -> System.out.println(r));
     }
 
     private static void showHelp() {
     }
 
     private static void createPerson() {
+       // System.out.println("BEFORE");
+        Person p = new Person();
+        //System.out.println("AFTER");
+
+        System.out.print("First name: ");
+        p.setFirstName(scanner.next());
+
+        System.out.print("Last name: ");
+        p.setLatsName(scanner.next());
+
+        System.out.print("email: ");
+        p.setEmail(scanner.next());
+
+        records.add(p);
     }
 }
